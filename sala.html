@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha senha — Fila Digital</title>
+    <meta name="theme-color" content="#1864ab">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎫</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca" href="index.html"><span class="marca-ic" aria-hidden="true">🎫</span><span><b id="nome-sala">Fila Digital</b><small id="atualizado">Acompanhe a sua senha</small></span></a>
+        <span class="conexao" id="conexao" aria-live="polite"></span>
+    </header>
+    <main class="pagina estreita" id="app"><p class="vazio">Carregando…</p></main>
+
+    <script src="vendor/mqtt.min.js"></script>
+    <script type="module" src="js/sala.js"></script>
+</body>
+</html>

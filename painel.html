@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel — Fila Digital</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="painel">
+    <div class="painel-grade">
+        <section class="painel-atual" id="atual" aria-live="assertive">
+            <span class="rot">Conectando…</span>
+        </section>
+        <aside class="painel-lado">
+            <h2>Últimas chamadas</h2>
+            <div class="chamando-lista" id="ultimas"></div>
+            <div class="painel-qr" id="qr"></div>
+            <span class="conexao" id="conexao" style="color:#c9d4ea"></span>
+        </aside>
+    </div>
+    <div class="ativar-som" id="ativar-som">
+        <button type="button" class="btn btn-pri">🔊 Toque para ativar o som do painel</button>
+    </div>
+    <script src="vendor/mqtt.min.js"></script>
+    <script src="vendor/qrcode.js"></script>
+    <script type="module" src="js/painel.js"></script>
+</body>
+</html>
