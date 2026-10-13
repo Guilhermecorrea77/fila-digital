@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recepção — Fila Digital</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎫</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca" href="index.html"><span class="marca-ic" aria-hidden="true">🎫</span><span><b>Fila Digital</b><small id="nome-sala">Recepção</small></span></a>
+        <div class="linha-btns" id="acoes-topo" hidden>
+            <span class="conexao" id="conexao" aria-live="polite"></span>
+            <button type="button" class="btn btn-peq" id="btn-qr-sala">🔳 QR da sala</button>
+            <a class="btn btn-peq" id="btn-painel" target="_blank" rel="noopener">📺 Painel TV</a>
+            <button type="button" class="btn btn-peq" id="btn-config">⚙️ Configurar</button>
+        </div>
+    </header>
+    <main class="pagina" id="app"><p class="vazio">Carregando…</p></main>
+
+    <dialog id="dlg-senha" aria-labelledby="dlg-senha-titulo">
+        <div class="dialogo-corpo bilhete" id="dlg-senha-corpo"></div>
+        <div class="dialogo-acoes">
+            <button type="button" class="btn" id="dlg-senha-imprimir">🖨️ Imprimir</button>
+            <button type="button" class="btn btn-pri" id="dlg-senha-fechar" autofocus>Pronto</button>
+        </div>
+    </dialog>
+
+    <dialog id="dlg-sala" aria-labelledby="dlg-sala-titulo">
+        <div class="dialogo-corpo" id="dlg-sala-corpo"></div>
+        <div class="dialogo-acoes">
+            <button type="button" class="btn" id="dlg-sala-imprimir">🖨️ Imprimir cartaz</button>
+            <button type="button" class="btn btn-pri" data-fechar>Fechar</button>
+        </div>
+    </dialog>
+
+    <dialog id="dlg-config" aria-labelledby="dlg-config-titulo">
+        <form method="dialog" id="form-config">
+            <div class="dialogo-corpo" id="dlg-config-corpo"></div>
+            <div class="dialogo-acoes">
+                <button type="button" class="btn" data-fechar>Cancelar</button>
+                <button type="submit" class="btn btn-pri" value="salvar">Salvar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <div class="area-impressao so-impressao" id="area-impressao"></div>
+
+    <script src="vendor/mqtt.min.js"></script>
+    <script src="vendor/qrcode.js"></script>
+    <script type="module" src="js/recepcao.js"></script>
+</body>
+</html>
